@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: rgb(248, 249, 250);
+    }
+  </style>
+</head>
+
+<body onload="loginUser()">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+       
+          <!-- Dropdown de inicio de sesión -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="user">
+              Inicio de Sesión
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="login.html"><i class="bi bi-door-open-fill"></i> Iniciar Sesión</a></li>
+              <li><a class="dropdown-item" href="my-profile.html"><i class="bi bi-person-fill"></i> Perfil</a></li>
+              <li><a class="dropdown-item" href="cart.html"><i class="bi bi-cart4"></i> Carrito de Compras</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" onClick="cerrarSesion()"><i class="bi bi-box-arrow-left"></i> Cerrar Sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <button class="btn-dark bg-dark btn-md" onClick="regresar()" id="regresar"><i class="bi bi-arrow-return-left"></i> Regresar</button>
+  
+  <!-- Inicio de sesion creado con clases de bootstrap -->
+
+  <div class="col-md-10 mx-auto col-lg-5">
+    <div class="p-4 p-md-5 border rounded-3 bg-light">
+      <div class="img"><img src="./img/login.png" alt="login" class="img-fluid"></div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="email" placeholder="Correo electrónico" autocomplete="off">
+        <label for="email">Correo electrónico</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="password" placeholder="Contraseña">
+        <label for="password">Contraseña</label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit" id="submit" onclick="controlError()">Ingresar</button>
+    </div>
+  </div>
+  <div class="alert alert-danger alert-dismissible fade" role="alert" id="alertaLogin">
+    <p>Por favor, complete los campos.</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    </button>
+  </div>
+
+
+                <!-- Autorizacion de Google -->
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="324409693179-2qou6usiiorq54qi0uv148ul9eh3da2k.apps.googleusercontent.com">
+    <div class="g-signin2 row justify-content-center" data-onsuccess="onSignIn"></div>
+
+    <!-- Fin de inicio de sesión -->
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
+        2022</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <script src="js/login.js"></script>
+
+</body>
+
+</html>
